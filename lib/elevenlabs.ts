@@ -1,7 +1,7 @@
 import { ElevenLabsVoice } from '@/types'
 
 const ELEVENLABS_BASE_URL = 'https://api.elevenlabs.io/v1'
-const API_KEY = process.env.ELEVENLABS_API_KEY!
+const API_KEY = process.env.ELEVENLABS_API_KEY || 'placeholder_elevenlabs_key'
 
 export async function getVoices(): Promise<ElevenLabsVoice[]> {
   const response = await fetch(`${ELEVENLABS_BASE_URL}/voices`, {

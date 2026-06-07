@@ -1,7 +1,7 @@
 import Groq from 'groq-sdk'
 
 export const groqClient = new Groq({
-  apiKey: process.env.GROQ_API_KEY!,
+  apiKey: process.env.GROQ_API_KEY || 'placeholder_groq_key',
 })
 
 export async function transcribeAudio(audioBuffer: Buffer, filename: string = 'audio.wav'): Promise<{
